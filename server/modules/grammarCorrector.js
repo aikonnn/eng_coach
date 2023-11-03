@@ -1,1 +1,4 @@
-// FOR NOW, think about certain functions we need
+//Think about what this should do
+export function getCorrections (message) {
+    return null;
+}

@@ -1,4 +1,6 @@
 const express = require('express'); 
+const getCorrections = require('./modules/grammarCorrector');
+const transcribeMP3 = require('./modules/voiceHandler');
   
 const app = express(); 
 const PORT = 3000;
@@ -23,7 +25,6 @@ app.get('/', (req, res)=>{
 // Think about what you want from the corrections, do you want to store them?
 
 app.post('/grammar_corrector', (req, res)=>{ 
-    //do planned steps
 
     //response: composed of status and body,
     //status : 2xx success, 4xx client-server error, 5xx server error
@@ -34,7 +35,7 @@ app.post('/grammar_corrector', (req, res)=>{
   
 app.listen(PORT, (error) =>{ 
     if(!error) 
-        console.log("Server is Successfully Running, and App is listening on port "+ PORT) 
+        console.log("Server is Successfully Running, and App is listening on port "+ PORT);
     else 
         console.log("Error occurred, server can't start", error); 
     } 
